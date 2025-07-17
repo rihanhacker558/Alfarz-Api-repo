@@ -61,7 +61,7 @@
         {
          "name": "Free Fire Stalk",
          "desc": "Cek akun Free Fire berdasarkan UID dan region",
-         "path": "/game/ff-stalk?uid=&region=",
+         "path": "/stalk/ff-stalk?uid=&region=",
         "status": "ready",
           "params": {
           "uid": "User ID Free Fire",
