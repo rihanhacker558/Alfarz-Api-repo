@@ -76,7 +76,7 @@
            {
          "name": "YouTube MP4 Download",
          "desc": "Dapatkan link download video YouTube",
-         "path": "/ytmp4/download?url=&quality=",
+         "path": "/downloader/ytmp4?url=&quality=",
          "status": "ready",
          "params": {
            "url": "Link video YouTube",
