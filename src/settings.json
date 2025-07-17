@@ -32,16 +32,6 @@
             "text": "Teks atau perintah untuk chat AI",
             "model":"1See the list of supported AI models here: https://mind.hydrooo.web.id"
           }
-        },
-        {
-          "name": "Mosyne AI",
-          "desc": "Remove background atau upscale gambar",
-          "path": "/ai/mosyne?type=",
-          "status": "ready",
-          "params": {
-            "type": "`remove_background` atau `upscale` (dikirim sebagai query)",
-            "file": "Kirim gambar via POST body (binary)"
-          }
         }
       ]
     },
