@@ -70,18 +70,18 @@
         }
       ]
     },
-        {
-      "name": "Downloader",
-      "items" [
-        {
-          "name": "Ytvideo downloader",
-          "desc": "Downloader video youtube dengan quality",
-          "path": "/downloader/ytmp4?url=&quality=",
-          "status": "ready"
-          "params": {
-            "url": "Link video YouTube",
-            "quality": "Kualitas video (opsional, contoh: 360p, 720p, 1080p)"
-          }
+    {
+         "name": "Downloader",
+         "items": [
+           {
+         "name": "Ytvideo Downloader",
+         "desc": "Ambil info dan link download video YouTube",
+         "path": "/downloader/ytmp4?url=&quality=",
+         "status": "ready",
+         "params": {
+          "url": "Link video YouTube",
+          "quality": "Kualitas video (opsional, contoh: 360p, 720p, 1080p)"
+           }
         }
       ]
     },
