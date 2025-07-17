@@ -343,11 +343,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!settings || Object.keys(settings).length === 0) return;
 
         const currentYear = new Date().getFullYear();
-        const creator = settings.apiSettings?.creator || 'FlowFalcon';
+        const creator = settings.apiSettings?.creator || 'Alfarezavera';
 
-        setPageContent(DOM.pageTitle, settings.name, "Falcon API");
+        setPageContent(DOM.pageTitle, settings.name, "Alfarz API");
         setPageContent(DOM.wm, `© ${currentYear} ${creator}. Semua hak dilindungi.`);
-        setPageContent(DOM.appName, settings.name, "Falcon API");
+        setPageContent(DOM.appName, settings.name, "Alfarz API");
         setPageContent(DOM.sideNavName, settings.name || "API");
         setPageContent(DOM.versionBadge, settings.version, "v1.0");
         setPageContent(DOM.versionHeaderBadge, settings.header?.status, "Aktif!");
@@ -375,7 +375,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         
         if (DOM.apiLinksContainer) {
             DOM.apiLinksContainer.innerHTML = ''; 
-            const defaultLinks = [{ url: "https://github.com/FlowFalcon/Falcon-Api-UI", name: "Lihat di GitHub", icon: "fab fa-github" }];
+            const defaultLinks = [{ url: "https://github.com/rihanhacker558", name: "Lihat di GitHub", icon: "fab fa-github" }];
             const linksToRender = settings.links?.length ? settings.links : defaultLinks;
 
             linksToRender.forEach(({ url, name, icon }, index) => {
