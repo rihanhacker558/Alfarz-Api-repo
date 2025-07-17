@@ -76,7 +76,7 @@
            {
          "name": "TikTok Downloader",
          "desc": "Download video TikTok tanpa watermark atau audio MP3",
-         "path": "/tiktok/dl?url=",
+         "path": "/downloader/tiktok?url=",
          "status": "ready",
          "params": {
            "url": "Link video TikTok"
