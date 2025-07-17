@@ -81,6 +81,15 @@
          "params": {
            "url": "Link video TikTok"
         }
+       },
+       {
+         "name": "Telegram Sticker",
+         "desc": "Scrape Telegram sticker pack dan dapatkan file URL-nya",
+         "path": "/telegram/stickers?url=",
+         "status": "ready",
+         "params": {
+           "url": "Link sticker pack Telegram (contoh: https://t.me/addstickers/packname)"
+        }
        }
       ]
     },
