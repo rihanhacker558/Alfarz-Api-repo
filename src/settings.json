@@ -57,6 +57,16 @@
            "params": {
             "username": "Username akun Instagram"
          }
+        },
+        {
+         "name": "Free Fire Stalk",
+         "desc": "Cek akun Free Fire berdasarkan UID dan region",
+         "path": "/game/ff-stalk?uid=&region=",
+        "status": "ready",
+          "params": {
+          "uid": "User ID Free Fire",
+          "region": "Kode region (misal: id, sg, th, dll). Default: id"
+         }
         }
       ]
     },
