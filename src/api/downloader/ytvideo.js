@@ -4,53 +4,49 @@ module.exports = function(app) {
   app.get('/downloader/ytmp4', async (req, res) => {
     const { url, quality } = req.query;
 
-    if (!url) {
-      return res.status(400).json({ status: false, message: 'Parameter `url` wajib.' });
+    if (!url || !quality) {
+      return res.status(400).json({
+        status: false,
+        message: 'Parameter `url` dan `quality` harus diisi.'
+      });
     }
 
     try {
-      const { data: info } = await axios.post('https://api.ytmp4.fit/api/video-info', { url }, {
-        headers: {
-          'Content-Type': 'application/json',
-          'Origin': 'https://ytmp4.fit',
-          'Referer': 'https://ytmp4.fit/'
-        }
-      });
-
-      if (!info || !info.title) {
-        return res.status(500).json({ status: false, message: 'Gagal ambil info video.' });
-      }
-
-      // Jika user minta link download
-      if (quality) {
-        const { data: download } = await axios.post('https://api.ytmp4.fit/api/download', { url, quality }, {
+      const { data } = await axios.post(
+        'https://api.ytmp4.fit/api/download',
+        { url, quality },
+        {
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
             'Origin': 'https://ytmp4.fit',
             'Referer': 'https://ytmp4.fit/'
-          }
-        });
-
-        if (!download?.url) {
-          return res.status(500).json({ status: false, message: 'Gagal ambil link download.' });
+          },
+          timeout: 20000 // Timeout 20 detik
         }
+      );
 
-        return res.status(200).json({
-          status: true,
-          info,
-          download: {
-            quality,
-            url: download.url
-          }
+      if (!data?.url) {
+        return res.status(500).json({
+          status: false,
+          message: 'Gagal mendapatkan link download.'
         });
       }
 
-      // Kalau tidak ada quality, kirim info saja
-      res.status(200).json({ status: true, info });
+      res.status(200).json({
+        status: true,
+        download: {
+          quality,
+          url: data.url
+        }
+      });
 
     } catch (err) {
-      res.status(500).json({ status: false, message: err.message });
+      const isAbort = err.code === 'ERR_CANCELED';
+      res.status(500).json({
+        status: false,
+        message: isAbort ? 'Permintaan dibatalkan (abort)' : err.message
+      });
     }
   });
 };
