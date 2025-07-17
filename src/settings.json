@@ -46,6 +46,20 @@
         }
       ]
     },
+        {
+      "name": "Stalk",
+      "items": [
+        {
+         "name": "Instagram Stalk",
+         "desc": "Lihat profil Instagram + engagement",
+         "path": "/ig/stalk?username=",
+         "status": "ready",
+           "params": {
+            "username": "Username akun Instagram"
+         }
+        }
+      ]
+    },
     {
       "name": "Search Tools",
       "items": [
